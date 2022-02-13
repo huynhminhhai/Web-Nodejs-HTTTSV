@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Bài viết cá nhân</title>
+</head>
+<body>
+    <div class="d-flex" id="wrapper">
+  
+        <!-- Sidebar -->
+        <div class="bg-light border-right" id="sidebar-wrapper">
+          <div class="sidebar-heading">THÔNG BÁO</div>
+          <div class="sidebar-heading">
+            <div class="profile">
+              <% if (!user.img) { %>
+                <img class="profile-img" src="/avatar.jfif" alt="profile_pic">
+              <% } %>
+              <% if (user.img) { %>
+                <img class="profile-img" src="/<%= user.img  %>" alt="profile_pic">
+              <% } %>
+              <span class="profile-name"><%= user.fullname %></span>
+            </div>
+          </div>
+          <div class="list-group list-group-flush">
+            <a href="/" class="list-group-item list-group-item-action bg-light">Trang Chủ</a>
+            <a href="/noti-classify/<%=user._id%>" class="list-group-item list-group-item-action bg-light">Phân loại thông báo</a>
+          </div>
+        </div>
+        <div id="page-content-wrapper">
+    
+          <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <button class="btn btn-primary" id="menu-toggle">Đóng/Mở</button>
+    
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                  <a href="#" class="array-position" hidden></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <% if (user.email == undefined) { %>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Tạo thông báo
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right noti" aria-labelledby="navbarDropdown">
+                    <!-- <a class="dropdown-item" href="/reset-password">Đổi mật khẩu</a> -->
+                  </div>
+                </li>
+                <% } %>
+                <!-- <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li> -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <%= user.fullname %>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <% if (user.position == 'vip') { %>
+                    <a class="dropdown-item" href="/register">Tạo tài khoản</a>
+                    <% } %>
+    
+                    <% if (user.email != undefined) { %>
+                    <a class="dropdown-item" href="/information">Thông tin</a>
+                    <% } %>
+    
+                    <% if (user.email == undefined) { %>
+                    <a class="dropdown-item" href="/reset-password">Đổi mật khẩu</a>
+                    <% } %>
+    
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/logout">Đăng xuất</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+    
+          <div class="container-fluid pl-2 pt-2 pb-2" id="container-fluid">
+                <button id="get-button" hidden>Read posts</button>
+                <input type="text" id="id-poster" value="<%= user._id %>" hidden>
+                <input type="text" class="idUser" id="id-user" value="<%=user._id%>" hidden>
+                <input type="text" class="id" value="<%=id%>" hidden>
+                <button id="get-button" hidden>Read posts</button>
+                <div class="body-post-personal">
+                    
+                </div>
+          </div>
+          
+        </div>
+      </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/javascripts/main.js"></script>
+</html>
+

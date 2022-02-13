@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Đăng thông báo</title>
+</head>
+<body>
+    <div class="login-body">
+        <div class="login-container">
+            <div class="noti-form-wrapper">
+                <form method="POST" class="noti-form" >
+                    <p class="login-title">Đăng thông báo</p>
+                    <input type="text" name="faculty" id="notification-faculty" value="<%= faculty %>" hidden>
+                    <input type="text" name="idUser" value="<%= idUser %>" hidden>
+                    <label for="fullname" class="login-label">Tiêu đề:</label>
+                    <input value="<%=titlenoti%>" name="titlenoti" type="text" class="login-input noti-text" id="noti-text" placeholder="Nhập tiêu đề thông báo...">
+                    <label for="fullname" class="login-label">Nội dung:</label>
+                    <textarea name="textnoti" id="text-noti" cols="30" rows="10" class="login-input noti-text" placeholder="Nhập nội dung thông báo..."><%=textnoti%></textarea>
+                    <p class="login-mess-error"><%=mess%></p>
+                    <button class="login-btn" type="submit" id="button-post-noti">Đăng</button>
+                </form>
+            </div>
+            <!-- <button class="login-btn" type="submit" id="button-post-noti">Đăng</button> -->
+        </div>
+    </div>
+    
+    <!-- <input type="text" id="msg" /> <button type="button" id="button-post-noti">Send</button> -->
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/javascripts/main.js"></script>
+  
+    <!-- <script> -->
+    //   const socket = io();
+    //   toastr.options = {
+    //       timeOut: 2000,
+    //       positionClass : 'toast-top-center',
+    //       extendedTimeOut: 0,
+    //       fadeOut: 0,
+    //       fadeIn: 0,
+    //       showDuration: 0,
+    //       hideDuration: 0,
+    //       debug: false
+    //   };
+      
+    //   socket.on('new-notification', (resp) => {
+    //     toastr.info(resp)
+    //     alert(resp)
+    //   });
+      
+    //   function sendMessage() {
+    //     let msg = document.getElementById('msg').value;
+    //     if(msg.trim() !== '') {
+    //       socket.emit("send-notification", msg);
+    //     }
+        
+    //   }
+    <!-- </script> -->
+</body>
+</html>

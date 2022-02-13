@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="710985546517-n50r81tuqt8dhkhi5511tgnnsol9m7hh.apps.googleusercontent.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="login-body">
+        <div class="login-container">
+            <div class="login-form-wrapper">
+                <h1 class="login-title">Đăng nhập</h1>
+                <form  method="POST" class="login-form">
+                    <div class="login-input-group">
+                        <label for="username" class="login-label">Tên người dùng</label>
+                        <input value="<%= username %>" id="username" name="username" type="text" class="login-input" placeholder="">
+                    </div>
+            
+                    <div class="login-input-group">
+                        <label for="password" class="login-label">Mật khẩu</label>
+                        <input value="<%= password %>" type="password" id="password" name="password" class="login-input" placeholder="">
+                    </div>
+            
+                    <p class="login-mess-error"><%= mess %></p>
+
+                    <button class="login-btn">Đăng nhập</button>
+            
+                </form>
+          
+              <div class="login-or-container">
+                <div class="login-or-wrapper">
+                    <span class="line"></span>
+                    <span class="continue-with">Continue With</span>
+                    <span class="line"></span>
+                </div>
+          
+                <div class="login-google-container">
+                    <button class="google-btn-plus"> <a class="text-google" href="/google" data-onsuccess="onSignIn">Google+</a></button>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/javascripts/main.js"></script>
+</html>

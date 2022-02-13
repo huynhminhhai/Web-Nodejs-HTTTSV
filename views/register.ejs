@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Trang đăng ký tài khoản</title>
+</head>
+<body>
+    <div class="login-body">
+        <div class="login-container">
+            <div class="login-form-wrapper">
+
+                <form method="POST" class="login-form">
+                    <h1 class="login-title">Đăng ký</h1>
+                    <div class="login-input-group">
+                        <label for="username" class="login-label">Tên người dùng</label>
+                        <input value="<%= username %>" type="text" id="username" name="username" class="login-input">
+                    </div>
+                    <div class="login-input-group">
+                        <label for="password" class="login-label">Mật khẩu</label>
+                        <input value="<%= password %>" type="password" name="password" id="password" class="login-input">
+                    </div>
+                    <div class="login-input-group">
+                        <label for="permission">Cấp quyền cho Phòng/Khoa:</label>
+                        <select class="permission" name="permission" id="permission" multiple>
+                            <option value="CTHSSV">CTHSSV</option>
+                            <option value="Phòng đại học">Phòng đại học</option>
+                            <option value="Phòng sau đại học">Phòng sau đại học</option>
+                            <option value="Phòng điện toán và máy tính">Phòng điện toán và máy tính</option>
+                            <option value="Phòng khảo thí và kiểm định chất lượng">Phòng khảo thí và kiểm định chất lượng</option>
+                            <option value="Phòng tài chính">Phòng tài chính</option>
+                            <option value="TDT Creative Language Center">TDT Creative Language Center</option>
+                            <option value="Trung tâm tin học">Trung tâm tin học</option>
+                            <option value="SDTC">SDTC</option>
+                            <option value="ATEM">ATEM</option>
+                            <option value="Trung tâm hợp tác doanh nghiệp và cựu sinh viên">Trung tâm hợp tác doanh nghiệp và cựu sinh viên</option>
+                            <option value="Khoa Luật">Khoa Luật</option>
+                            <option value="Trung tâm ngoại ngữ - tin học – bồi dưỡng văn hóa">Trung tâm ngoại ngữ - tin học – bồi dưỡng văn hóa</option>
+                            <option value="Viện chính sách kinh tế và kinh doanh">Viện chính sách kinh tế và kinh doanh</option>
+                            <option value="Khoa Mỹ thuật công nghiệp">Khoa Mỹ thuật công nghiệp</option>
+                            <option value="Khoa Điện – Điện tử">Khoa Điện – Điện tử</option>
+                            <option value="Khoa Công nghệ thông tin">Khoa Công nghệ thông tin</option>
+                            <option value="Khoa Quản trị kinh doanh">Khoa Quản trị kinh doanh</option>
+                            <option value="Khoa Môi trường và bảo hộ lao động">Khoa Môi trường và bảo hộ lao động</option>
+                            <option value="Khoa Lao động công đoàn">Khoa Lao động công đoàn</option>
+                            <option value="Khoa Tài chính ngân hàng">Khoa Tài chính ngân hàng</option>
+                            <option value="Khoa giáo dục quốc tế">Khoa giáo dục quốc tế</option>
+                        </select>
+                    </div>
+                    <p class="login-mess-error"><%= mess %></p>
+                    <button class="login-btn" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/javascripts/main.js"></script>
+</body>
+</html>

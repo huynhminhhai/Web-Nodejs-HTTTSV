@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Trang thông tin sinh viên</title>
+</head>
+<body>
+    <div class="login-body">
+        <div class="login-container">
+            <div class="login-form-wrapper">
+
+                <form method="POST" class="login-form" enctype="multipart/form-data">
+                    <h1 class="login-title">Thông tin cá nhân</h1>
+                    <div class="login-input-group">
+                        <label for="fullname" class="login-label">Họ tên</label>
+                        <input value="<%= user.fullname %>" type="text" id="fullname" name="fullname" class="login-input">
+                    </div>
+                    <div class="login-input-group">
+                        <label for="class" class="login-label">Lớp</label>
+                        <input value="<%= user.class %>" type="text" id="class" name="classcode" class="login-input">
+                    </div>
+                    <div class="login-input-group">
+                        <label for="faculty" class="login-label">Khoa</label>
+                        <input value="<%= user.faculty %>" type="text" id="faculty" name="faculty" class="login-input">
+                    </div>
+                    <div class="login-input-group">
+                        <label class="custom-file-label text-truncate" for="customFile">Chọn ảnh</label>
+                        <input accept="image/*" type="file" class="custom-file-input" id="customFile" name="img">
+                    </div>
+                    
+                    <p class="login-mess-error"></p>
+                    <button class="login-btn" type="submit">Thay Đổi</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/javascripts/main.js"></script>
+</body>
+</html>
